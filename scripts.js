@@ -96,6 +96,15 @@ _currentList = {
                 }
             }
         },
+        {
+            name: "Captain Rex",
+        },
+        {
+            name: "Phase II Troopers",
+        },
+        {
+            name: "Phase II Troopers",
+        }
     ], 
     orders: {
         onePip: {
@@ -120,4 +129,12 @@ _currentList = {
             }
         }
     }
+}
+
+function LoadBattleList(list) {
+    var domBattleList = $("#current-battle-list-display");
+    list.units.forEach( (unit) => {
+        var unitStr = `<div class='column is-one-third unit-card'><h2>${unit.name}</h2><hr></div>`;
+        domBattleList.append(unitStr);
+    })
 }

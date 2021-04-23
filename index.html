@@ -5,17 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SWL List Builder</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" ref="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts.js"></script>
   </head>
   <body>
   <section class="section">
     <div class="container">
       <h1 class="title">
-        
+        Star Wars Legion List Builder  
       </h1>
       <p class="subtitle">
-        My first website with <strong>Bulma</strong>!
+        May the force be with you!
       </p>
+
+      <div id="current-battle-list-display" class="columns is-multiline">
+
+      </div>
     </div>
   </section>
+  <script>
+    LoadBattleList(_currentList);
+  </script>
   </body>
 </html>
