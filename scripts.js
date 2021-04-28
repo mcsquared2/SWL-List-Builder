@@ -13,6 +13,8 @@ _currentList = {
             defenseDie: "red",
             attackSurge: "crit",
             defenseSurge: "-",
+            movement: 2,
+            faction: "Republic",
             keywords: [
                 {
                     name: "tactical",
