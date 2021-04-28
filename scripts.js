@@ -2,109 +2,46 @@ _currentList = {
     listName: "Tanks for the memories",
     units: [
         {
-            name: "Obi-Won Kenobi",
-            unitCost: 170,
-            models:1,
-            wounds: 6,
+            name: "Captain Rex",
+            cost: 90,
+            models: 1,
+            wounds: 5,
+            rank: "Commander",
+            type: "Trooper",
+            isCharacter: true,
             loyalty: 3,
             defenseDie: "red",
-            hitSurge: "-",
+            attackSurge: "crit",
             defenseSurge: "-",
-            keywords: {
-                charge: {
-                    description: "after performing a move action, you may attack without spending an action",
-                },
-                jump: {
-                    description: "you may ignore terrain of height [x] or less while performing a move action",
-                    exhausted: false,
-                    isExhaustible: true,
-                    X: 1
-                },
-
-            },
-            weapons: {
-                Lightsaber: {
-                    attackPool: "rrbbww",
-                    range: 0,
-                    keywords: {
-                        critical: {
-                            description: "surge to crit [X] times",
-                            X: 2
-                        },
-                        impact: {
-                            description: "When attacking a unit with armor, change [X] hits to critical hits",
-                            X: 2
-                        },
-                        pierce: {
-                            description: "Ignore [X] blocks from the defending pool",
-                            X: 2,
-                        }
-                    }
-                },
-                saberThrow: {
-                    
+            keywords: [
+                {
+                    name: "tactical",
+                    x: 1,
+                    description: "After performing a move token, gain [x] aim tokens."
                 }
-            },
-            upgrades: {
-                lightSide: {
-                    cap: 2,
-                    upgrades:[
+            ],
+            weapons: [
+                {
+                    name: "unarmed",
+                    attackPool: "bb",
+                    range: "melee",
+                    keywords: [],
+                },
+                {
+                    name: "E44 dueling pistols",
+                    attackPool: "rrr",
+                    range: "1-2",
+                    keywords: [
                         {
-                            name: "Saber Throw",
-                            cost: 5,
-                            action: "add-weapon",
-                            weapon: {
-                                displayText: "Saber Throw",
-                                attackPool: "rbw",
-                                range: {
-                                    start: 1,
-                                    stop: 2
-                                },
-                                keywords: {
-                                    critical: {
-                                        description: "surge to crit [X] times",
-                                        X: 2
-                                    },
-                                    impact: {
-                                        description: "When attacking a unit with armor, change [X] hits to critical hits",
-                                        X: 2
-                                    },
-                                    pierce: {
-                                        description: "Ignore [X] blocks from the defending pool",
-                                        X: 2,
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            name: "Force Reflexes",
-                            cost: 15,
-                            action: "add-keyword",
-                            keyword: {
-                                description: "[exhaust] : add 1 dodge token to this unit",
-                                exhausted: false,
-                                isExhaustible: true
-                            }
+                            name: "pierce",
+                            x: 1,
+                            description: "After defense dice are rolled, ignore [x] defense tokens",
                         }
                     ]
-                },
-                command: {
-
-                },
-                training: {
-                    
                 }
-            }
+            ]
+
         },
-        {
-            name: "Captain Rex",
-        },
-        {
-            name: "Phase II Troopers",
-        },
-        {
-            name: "Phase II Troopers",
-        }
     ], 
     orders: {
         onePip: {
@@ -131,10 +68,58 @@ _currentList = {
     }
 }
 
+function GetTotalCost(unit) {
+    cost = unit.unitCost;
+    return cost;
+}
+
 function LoadBattleList(list) {
     var domBattleList = $("#current-battle-list-display");
     list.units.forEach( (unit) => {
-        var unitStr = `<div class='column is-one-third unit-card'><h2>${unit.name}</h2><hr></div>`;
+        upgrades = "command, command, training, gear";
+        keywords = "keyword1, keyword2";
+        weapons = "weapon1, weapon2";
+
+        var unitStr = `
+        <div class='column is-half unit-card'>
+            <div class='columns'>
+                <div class='column is-one-quarter'>
+                    <div class='subtitle'>Faction: ${unit.faction}</div>
+                    <hr>
+                    <div class='subtitle'>${unit.cost} pts</div>
+                    <hr>
+                    <div>
+                        ${upgrades}
+                    </div>
+                </div>
+                <div class='column is-half'>
+                    <div class='subtitle'>
+                        ${unit.name}
+                    </div>
+                    <hr>
+                    <div>
+                        ${keywords}
+                    </div>
+                    <hr>
+                    <div>
+                        ${weapons}
+                    </div>
+                </div>
+                <div class='column is-one-quarter'>
+                    <div>Rank: ${unit.rank}</div>
+                    <div>model count: ${unit.models}</div>
+                    <hr>
+                    <div>${unit.type}</div>
+                    <hr>
+                    <div>${unit.wounds}</div>
+                    <div>${unit.loyalty}</div>
+                    <div>${unit.defenseDie}</div>
+                    <div>attack surge: ${unit.attackSurge}</div>
+                    <div>defense surge: ${unit.defenseSurge}</div>
+                    <div>Movement: ${unit.movement}</div>
+                </div>
+            </div>
+        </div>`;
         domBattleList.append(unitStr);
     })
 }
