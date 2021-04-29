@@ -1,4 +1,6 @@
 @charset "utf-8";
+@import "../bulma-0.9.2/bulma.sass";
+
 
 // Import a Google Font
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
@@ -35,3 +37,4 @@ $input-shadow: none;
 @import "../bulma-0.9.2/sass/components/navbar.sass";
 @import "../bulma-0.9.2/sass/layout/hero.sass";
 @import "../bulma-0.9.2/sass/layout/section.sass";
+@import "../bulma-0.9.2/sass/grid/_all.sass";
