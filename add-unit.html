@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SWL List Builder</title>
+    <link rel="stylesheet" href="css/mystyles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts.js"></script>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      
+
+      <div id="add-unit-form" class="container">
+        <form >
+          
+          <!-- First Row -->
+          <div class="columns">
+
+            <div class="field column is-5">
+              <label class="label">Unit Name</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Captain Fordo" value="">
+              </div>
+            </div>
+            
+            <div class="field column is-5">
+              <label class="label">Unit Subname</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="The Only One Droids Fear is Him" value="">
+              </div>
+            </div>
+
+            <div class="column auto">
+              <label class="label">Cost</label>
+              <div class="control">
+                <input type="number" class="input" placeholder="1" min="0">
+              </div>
+            </div>
+              
+          </div>
+
+          <div class="columns">
+
+            <div class="field column is-2">
+              <label class="label">Faction</label>
+              <div class="control">
+                <div class="select">
+                  <select>
+                    <option>Select dropdown</option>
+                    <option>Galactic Republic</option>
+                    <option>Seperatists</option>
+                    <option>Empire</option>
+                    <option>Rebellion</option>
+                    <option>The Sickness</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="field column is-2">
+              <label class="label">Rank</label>
+              <div class="control">
+                <div class="select">
+                  <select>
+                    <option>Select Rank</option>
+                    <option>Commander</option>
+                    <option>Operative</option>
+                    <option>Corps</option>
+                    <option>Special Forces</option>
+                    <option>Support</option>
+                    <option>Heavy</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="column"></div>
+            
+            <div class="field column is-half">
+              <label class="label">Type</label>
+              <div class="control">
+                <input type="text" class="input" placeholder="trooper">
+              </div>
+            </div>
+          </div>
+            
+          <!-- Second Row -->
+          <div class="columns">
+
+            <div class="field column is-1">
+              <label class="label">Wounds</label>
+              <div class="control">
+                <input type="number" class="input" placeholder="1">
+              </div>
+            </div>
+
+            <div class="column is-1">
+              <label class="label">Loyalty</label>
+              <div class="control">
+                <input type="number" class="input" placeholder="1">
+              </div>
+            </div>
+
+            <div class="field column is-2">
+              <label class="label">Defense Die</label>
+              <div class="control">
+                <div class="select">
+                  <select>
+                    <option>Select Die</option>
+                    <option>Red</option>
+                    <option>White</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field column is-2">
+              <label class="label">Attack Surge</label>
+              <div class="control">
+                <div class="select">
+                  <select>
+                    <option>Select Surge</option>
+                    <option>---</option>
+                    <option>Hit</option>
+                    <option>Crit</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field column is-2">
+              <label class="label">Defense Surge</label>
+              <div class="control">
+                <div class="select">
+                  <select>
+                    <option>Select Surge</option>
+                    <option>---</option>
+                    <option>Defense</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field column is-1">
+              <label class="label">Movement</label>
+              <div class="control">
+                <input type="number" class="input" placeholder="1" min="0" max="3">
+              </div>
+            </div>
+
+          </div>
+
+          
+
+          
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+  </body>
+</html>
